@@ -1,0 +1,27 @@
+/* نحي default spacing تاع المتصفح */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+
+}
+
+
+/* root لازم يغطي كامل الشاشة */
+#root {
+  width: 100%;
+  min-height: 100vh;
+  text-align: center; /* تبقى كيفما هي */
+}
+
+
+/* المحتوى فوق الخلفية */
+.container-home,
+.search-bar,
+.title-home,
+nav {
+  position: relative;
+  z-index: 1;
+}
+

@@ -1,0 +1,59 @@
+.edit-body{
+        background-color:   #F5F5DC;
+          background-image: url('../public/images/edit4.jpg');
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+}
+.input-container-edit{
+  
+    display: flex;
+    justify-content: center;
+    width:45%;
+
+    height: 90vh;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 5px;
+
+}
+.input-container-edit input{
+     background-color: rgb(255, 255, 254);
+   padding: 10px;
+   width: 90%;
+   margin:10px;
+   border: none;
+   border-radius: 5px;
+   border: 5px solid rgb(223, 218, 203);
+
+}
+textarea{
+     background-color: rgb(255, 255, 255);
+   padding: 30px;
+   width: 90%;
+
+
+}
+.save{
+ 
+   color: rgb(0, 0, 0);
+   padding: 10px 15px;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   width: 30%;
+   height: 40px;
+   margin: 0 auto;
+   cursor: pointer;
+}
+.save :hover{
+    background-color: rgb(92, 92, 92);
+}
+.title-edit{
+   
+  margin:10px;
+  padding:10px;
+  color: rgb(52, 52, 22);
+  text-align: center;
+  font-family: serif;
+}

@@ -1,0 +1,58 @@
+.header{
+
+    justify-content: space-between;
+ width: 100vw;
+ height: 20vh;
+ display: flex;
+padding: 5px 2px;
+ align-items: center;
+
+    top: 0;          /* من الأعلى */
+    left: 0;
+    z-index: 1000;   /* باش يبقى فوق كل العناصر */
+background-color: rgb(255, 255, 255);
+
+}
+.title{
+    font-size: 4.5rem;
+    font-weight: bold;
+padding: 10px 20px;
+font-style:monospace;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+color: rgb(0, 0, 0);
+width: 28%;
+
+}
+.navbar{
+    display: flex;
+    align-items:center;
+flex-direction: row;
+width: 50%;
+  font-size: 2.5rem;
+  list-style-type: none;
+  color: rgb(255, 255, 255);
+gap:70px;
+
+
+}
+.navbar a{
+      color: rgb(0, 0, 0);
+  text-transform:lowercase;
+  text-decoration: none;
+  transition: 0.5s;
+
+}
+.navbar li{
+    font-size: 26px;
+}
+.navbar a:hover{
+         color: rgb(255, 255, 255);
+}
+li{
+    display: flex;
+
+color: rgba(255, 1, 1, 0.721);
+
+
+}

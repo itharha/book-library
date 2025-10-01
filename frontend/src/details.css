@@ -1,0 +1,87 @@
+.body-details{
+  background-color: #F5F5DC;
+
+}
+ h2{
+  color: rgb(0, 0, 0);
+padding: 20px;
+    font-size: 2.2rem;
+    width: 30%;
+   height: 40px;
+  text-align: center;
+  margin-right: 5%;
+
+}
+.details-card{
+    background-image: url('../public/images/book2.jpg');
+display: flex;
+justify-content: center;
+align-items: center;
+    width: 62%;
+ flex-wrap: wrap;
+ margin: 0 auto;
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+padding: 5px;
+
+ 
+}
+.details-card h2{
+font-size: 2rem;;
+color: rgb(201, 158, 70);
+margin-top: 1%;
+ width: 300px;
+ height: 150px;
+}
+.body-details img{
+  width: 30%;
+    height: 30%;
+        border-radius: 120px;
+        margin-left: 10%;
+  
+}
+.description{
+   width: 70%;
+       display: block;
+}
+.description p {
+    display: block;
+    margin: 5px 0; /* مسافة بين الأسطر */
+    color: #b1aeac;
+}
+.button-det{
+    background-color: rgb(228, 227, 227);
+    width: 180px;
+    padding: 5px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.button-det:hover{
+    background-color: rgb(140, 212, 23);
+}
+.title-det{
+    color: #4e4e4e;
+  margin:10px;
+  padding:10px;
+
+  text-align: center;
+  font-family: serif;}
+
+.add-det{
+      background-color: rgb(228, 227, 227);
+    width: 180px;
+    padding: 5px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+        color: #000000;
+}
+.add-det:hover{
+    background-color: rgb(220, 60, 16);
+}

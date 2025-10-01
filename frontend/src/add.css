@@ -1,0 +1,42 @@
+.add-body{
+    background-color:   #F5F5DC;
+}
+.input-container{
+    display: flex;
+    justify-content: center;
+    width:50%;
+    margin: 10px auto;
+    height: 80vh;
+
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 5px;
+
+}
+.input-container input{
+ background-color: rgb(255, 255, 255);
+   padding: 10px;
+   width: 90%;
+   margin:9px auto;
+   border: none;
+
+
+}
+textarea{
+   padding: 20px;
+   width: 90%;
+   margin: 10px auto;
+   border: none;
+
+
+}
+.button-add{
+  
+     color: rgb(0, 0, 0);
+   padding: 10px 15px;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   width: 30%;
+   margin: 10px auto;
+}
