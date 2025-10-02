@@ -16,6 +16,7 @@ function handleChange(e){
 }
 //idea  of search bar
 function handleSerach() {
+    if (!Array.isArray(Books)) return [];
 return  Books.filter((Book)=>
 Book.title.toLowerCase().includes(Cherche.toLowerCase().trim())|| Book.author.toLowerCase().includes(Cherche.toLowerCase().trim())
 
@@ -30,19 +31,13 @@ function handleKeyDown(e){
 
 // idea of .env in fetch("import.meta.env..") 
    useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/books`)
+    fetch("https://raw.githubusercontent.com/itharha/book-library-dbjson/main/db.json")
       .then((res) => res.json())
-      .then((data) => setBooks(data))
+      .then((data) => setBooks(data.books))
       .catch((err) => console.error("not found", err));
   }, []);
 
-  // idea of delete
-     async function handleDelete(Book) {
-      await fetch(`${import.meta.env.VITE_API_URL}/books/${Book.id}`, {
-        method: "DELETE",
-      });
-      setBooks(Books.filter((b) => b.id !== Book.id));
-}
+
 
 // idee localstrge going to details..
 const handleDet = (Book) =>{
@@ -78,12 +73,12 @@ const handle = (Book) =>{
           <li key={Book.id}>
 
             <div className="home-card">
-         <img src={Book.img} alt={Book.title}/>
+          <img src={Book.img  || "https://via.placeholder.com/150"} alt={Book.title}/> 
             <h3>{Book.title}</h3>
             <p>{Book.author}</p>
               <Link to={`/details/${Book.id}`}>    
      <button className="button-link" >View More</button> </Link>
-     <button className="button-del" onClick={() => handleDelete(Book)}>Delete</button>
+   
   <Link to={`/edit/${Book.id}`}>
             <button className="button-edit">Edit</button>
           </Link>

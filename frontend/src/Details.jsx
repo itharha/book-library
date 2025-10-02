@@ -15,11 +15,12 @@ const Navigate=useNavigate();
   useEffect(() => {
     if (id) {
       // جينا من button، نجيب الكتاب عن طريق API
-      fetch(`${import.meta.env.VITE_API_URL}/books/${id}`)
+      fetch(`${import.meta.env.VITE_API_URL}/db.json`)
         .then(res => res.json())
         .then(data => {
-          setBook(data);
-          localStorage.setItem("detbook", JSON.stringify(data));  // نخزنو
+          const found=data.books.find(b=>b.id===id);
+          setBook(found);
+          localStorage.setItem("detbook", JSON.stringify(found));  // نخزنو
         });
     } else {
       // جينا من navbar، نجيب الكتاب الأخير المخزن
@@ -39,7 +40,7 @@ if (!book) return<p>LOADING..!</p>
       <div className="details-card">
     
      <h2> {book.title}</h2>
-  <img src={book.img} alt={book.title}/> 
+  <img src={book.img  ||"https://via.placeholder.com/150"} alt={book.title}/> 
 
   <div className="description">
    

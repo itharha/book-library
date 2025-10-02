@@ -18,14 +18,15 @@ function Edit(){
    //cnx with backend
    useEffect(()=>{
     if(id){
- fetch(`${import.meta.env.VITE_API_URL}/books/${id}`)
+ fetch("https://raw.githubusercontent.com/itharha/book-library-dbjson/refs/heads/main/db.json")
     .then(res=>res.json())
     .then(data=>{
-     setBooks(data),
- localStorage.setItem("editbook", JSON.stringify(data))
+         const found = data.books.find(b => b.id === id); // نجيب الكتاب بالـ id
+        if (found) {
+          setBooks(found);
+        }
+ localStorage.setItem("editbook", JSON.stringify(found))
     }
-   
-    
     )}
 
     
@@ -58,7 +59,7 @@ body:JSON.stringify(Books)
      <>
     
     <div className="edit-body">
-          <h1 className="title-edit">🖋️  أعد صياغة الذكرى</h1>
+          <h1 className="title-edit">🖋️  أعد صياغة الذكرى..Believe in yourself and trust your journey.✨</h1>
      
 
           <div className="input-container-edit">
@@ -73,6 +74,7 @@ body:JSON.stringify(Books)
       <button  className="save" onClick={handleSave}>Save</button>
 
         </div>
+
      </div>
      </> 
    
