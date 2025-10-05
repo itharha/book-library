@@ -71,6 +71,7 @@ return(
         onChange={(e) => setPublishedDate(e.target.value)}
       />
       <textarea
+      className='textarea-add'
         placeholder="Summary"
         value={summary}
         onChange={(e) => setSummary(e.target.value)}

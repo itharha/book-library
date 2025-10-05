@@ -22,12 +22,12 @@
 
 
 }
-textarea{
+.textarea-add{
    padding: 20px;
    width: 90%;
    margin: 10px auto;
    border: none;
-
+background-color: rgb(255, 255, 255);
 
 }
 .button-add{

@@ -18,20 +18,16 @@ function Edit(){
    //cnx with backend
    useEffect(()=>{
     if(id){
- fetch("https://raw.githubusercontent.com/itharha/book-library-dbjson/refs/heads/main/db.json")
+ fetch(`${import.meta.env.VITE_API_URL}/books/${id}`)
     .then(res=>res.json())
     .then(data=>{
-         const found = data.books.find(b => b.id === id); // نجيب الكتاب بالـ id
-        if (found) {
-          setBooks(found);
-        }
- localStorage.setItem("editbook", JSON.stringify(found))
+          setBooks(data)
+        
+ localStorage.setItem("editbook", JSON.stringify(data))})
     }
-    )}
-
     
     else{
-        const save= localStorage.getItem("editbook");
+        const save= localStorage.getItem("editbook")
         if(save) setBooks(JSON.parse(save))
     }
      },[id]);

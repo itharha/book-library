@@ -17,11 +17,9 @@ const Navigate=useNavigate();
       // جينا من button، نجيب الكتاب عن طريق API
       fetch(`${import.meta.env.VITE_API_URL}/books/${id}`)
         .then(res => res.json())
-        .then(data => {
-          const found=data.books.find(b=>b.id===id);
-          setBook(found);
-          localStorage.setItem("detbook", JSON.stringify(found));  // نخزنو
-        });
+        .then(data =>{
+          setBook(data);
+          localStorage.setItem("detbook", JSON.stringify(data))})
     } else {
       // جينا من navbar، نجيب الكتاب الأخير المخزن
       const saved = localStorage.getItem("editbook");

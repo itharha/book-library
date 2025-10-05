@@ -17,11 +17,15 @@ function handleChange(e){
 //idea  of search bar
 function handleSerach() {
     if (!Array.isArray(Books)) return [];
-return  Books.filter((Book)=>
-Book.title.toLowerCase().includes(Cherche.toLowerCase().trim())|| Book.author.toLowerCase().includes(Cherche.toLowerCase().trim())
-
-);
+  // si le champ de recherche est vide, retourne tous les livres
+  if (!Cherche || Cherche.trim() === "") return Books;
+ return Books.filter((Book) =>
+    Book.title?.toLowerCase().includes(Cherche.toLowerCase().trim()) ||
+    Book.author?.toLowerCase().includes(Cherche.toLowerCase().trim())
+  )
 };
+
+
 //idea t3 keyword
 function handleKeyDown(e){
   if(e.key=="Enter"){
@@ -33,7 +37,9 @@ function handleKeyDown(e){
    useEffect(() => {
     fetch(`${import.meta.env.VITE_API_URL}/books`)
       .then((res) => res.json())
-      .then((data) => setBooks(data.books))
+     
+      .then((data) => setBooks(data))
+      
       .catch((err) => console.error("not found", err));
   }, []);
 
@@ -49,10 +55,11 @@ const handleDet = (Book) =>{
 const handle = (Book) =>{
   localStorage.setItem("editbook",JSON.stringify(Book));
   Navigate("/edit");
-}
+};
 
-  return (
+  return(
   <>
+      
       <div className="body-home">
        <h1 className="title-home"> 💫 عالم يسكنه الورق </h1>
    
@@ -64,14 +71,12 @@ const handle = (Book) =>{
   </div>
   <main >
 </main>
+  
 
-
-
-      <ul>
     <div className="container-home">
-   {handleSerach().map((Book) => (
+   
+ {handleSerach().map((Book) => (
           <li key={Book.id}>
-
             <div className="home-card">
           <img src={Book.img  || "https://via.placeholder.com/150"} alt={Book.title}/> 
             <h3>{Book.title}</h3>
@@ -85,14 +90,16 @@ const handle = (Book) =>{
 
             </div>
           </li> 
-         ))}
+  ))}
+        
      </div>
-      </ul>
+       
     </div>
+    
   </>
-  
-  );
-}
+   );
+ 
+  }
 export default Home;
 
-
+  
