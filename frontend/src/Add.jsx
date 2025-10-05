@@ -14,7 +14,7 @@ const newBook={title,author,img,address,publishedDate,summary}
 
 async function Handle(e){
     e.preventDefault();
-    await fetch("https://raw.githubusercontent.com/itharha/book-library-dbjson/refs/heads/main/db.json",{
+    await fetch(`${import.meta.env.VITE_API_URL}/books`,{
     method: "POST",
     headers:{'Content-Type':'application/json'},
     body:JSON.stringify(newBook)

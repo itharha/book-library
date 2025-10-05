@@ -31,7 +31,7 @@ function handleKeyDown(e){
 
 // idea of .env in fetch("import.meta.env..") 
    useEffect(() => {
-    fetch("https://raw.githubusercontent.com/itharha/book-library-dbjson/main/db.json")
+    fetch(`${import.meta.env.VITE_API_URL}/books`)
       .then((res) => res.json())
       .then((data) => setBooks(data.books))
       .catch((err) => console.error("not found", err));

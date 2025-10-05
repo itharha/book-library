@@ -15,7 +15,7 @@ const Navigate=useNavigate();
   useEffect(() => {
     if (id) {
       // جينا من button، نجيب الكتاب عن طريق API
-      fetch(`${import.meta.env.VITE_API_URL}/db.json`)
+      fetch(`${import.meta.env.VITE_API_URL}/books/${id}`)
         .then(res => res.json())
         .then(data => {
           const found=data.books.find(b=>b.id===id);
